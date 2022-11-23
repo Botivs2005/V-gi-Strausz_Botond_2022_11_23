@@ -4,8 +4,6 @@
 menu pontok
 0(Kilépés)
 
-
-
 1(Bérlet választás)
 - név amit a bérlethez kötünk
 - bérlet fajta
