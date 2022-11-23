@@ -7,9 +7,10 @@ menu pontok
 
 
 1(Bérlet választás)
-- bérlet fajták bronz silver gold
 - név amit a bérlethez kötünk
--hozzá kapcsolt jelszó
+- bérlet fajta
+- személyi edző valasztas
+-ár
 
 2(Minden bérlet tulajdonságai és előnyei)
 -bronz nincs semmi előny
@@ -17,13 +18,9 @@ menu pontok
 -gold   - sauna -protein shake -private parkoló és autó takarítás
 
 3(Személyi edző program)
--személyi edző választás
-- időpontok kiváasztása
+-személyi edzők kiírása
+-legjobban kedvelt szeméyli edző
 
-4(Fizetés)
--fizetés a bérlet tipusátol és érvényességi idejétől
--ár kíirása
-
-5(bejelentkezés)
--név és a jelszó megadása és ha benne van a rendszerben akkor beengedés
-
+4(csoportos edzés)
+-ki írja mikor vannak
+-kiválasztod a neked jót és akkor oda felvesz
