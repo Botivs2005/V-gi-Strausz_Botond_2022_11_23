@@ -16,7 +16,6 @@ menu pontok
 -gold   - sauna -protein shake -private parkoló és autó takarítás
 
 3(Személyi edző program)
--személyi edzők kiírása
 -legjobban kedvelt szeméyli edző
 
 4(csoportos edzés)

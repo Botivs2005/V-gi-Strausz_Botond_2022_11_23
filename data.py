@@ -1,0 +1,3 @@
+edzok=[]
+emberek=[]
+berlet=[]

@@ -1,4 +1,5 @@
 from os import system  
+from data import *
 filename='berletek.csv'
 
 def menu():
@@ -35,4 +36,51 @@ def tulajdonsagok():
     print('1-Silver')
     print('3-Gold')
     return input ('Kérem válasszon: ')
+
+
+
+def edzokkiir():
+    legkedveltebb_szemelyi_edzo=''
+    for i in range(0,len(edzok)):
+        print(f'\t{i+1}. {emberek[i]} {berlet[i]} {edzok[i]}')
+    input('Tovább...')
+
+
+def fajlBeolvasas():
+    file=open(filename,'r', encoding='utf-8')
+    file.readline() 
+    for egysor in file:
+        darabolt=egysor.strip().split(';')
+        emberek.append(darabolt[0])
+        berlet.append(darabolt[1])
+        edzok.append(darabolt[2])
+
+    file.close()
+
+def menu2(choice2):
+    while choice2!='0':
+        choice2=tulajdonsagok()
+        if choice2=='1':
+            print('asd')
+        elif choice2=='2':
+            print('m')
+        elif choice2=='3':
+            print('ne')
+        elif choice2=='0':
+            menu1('0')
+        input()
+
+def menu1(choice):
+    while choice!='0':
+        choice=menu()
+        if choice=='1':
+            berlethozzaadas()
+        elif choice=='2':
+            menu2('')
+        elif choice=='3':
+            fajlBeolvasas()
+            edzokkiir()
+        elif choice=='4':
+            pass
+
 
