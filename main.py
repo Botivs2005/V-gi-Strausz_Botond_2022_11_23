@@ -1,7 +1,5 @@
 from functions import *
 
-fajlBeolvasas()
-
 choice=''
 choice2=''
 menu1(choice)

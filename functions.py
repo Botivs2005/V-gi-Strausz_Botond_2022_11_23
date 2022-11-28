@@ -39,23 +39,17 @@ def tulajdonsagok():
 
 
 
-def edzokkiir():
-    legkedveltebb_szemelyi_edzo=''
-    for i in range(0,len(edzok)):
-        print(f'\t{i+1}. {emberek[i]} {berlet[i]} {edzok[i]}')
-    input('Tovább...')
+def leggyakoribbedzo():
+    TZ=0
+    TD=0
+    VSB=0
+ file=open('objektivek.csv','r', encoding='utf-8')
 
 
-def fajlBeolvasas():
-    file=open(filename,'r', encoding='utf-8')
-    file.readline() 
-    for egysor in file:
-        darabolt=egysor.strip().split(';')
-        emberek.append(darabolt[0])
-        berlet.append(darabolt[1])
-        edzok.append(darabolt[2])
 
-    file.close()
+
+
+
 
 def menu2(choice2):
     while choice2!='0':
@@ -78,8 +72,7 @@ def menu1(choice):
         elif choice=='2':
             menu2('')
         elif choice=='3':
-            fajlBeolvasas()
-            edzokkiir()
+            pass
         elif choice=='4':
             pass
 
