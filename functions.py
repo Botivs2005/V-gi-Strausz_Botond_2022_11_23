@@ -54,10 +54,10 @@ def fajlBeolvasas():
 
 def idopontokkiir():
      with open('idopontok.csv','r') as csv_file:
-        csv_olvaso=csv.reader(csv_file)
+        csv_reader=csv.reader(csv_file)
 
-        for sor in csv_olvaso:
-            print(sor[1])
+        for line in csv_reader:
+            print(line[0])
 
 
 
