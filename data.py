@@ -1,3 +1,5 @@
 edzok=[]
 emberek=[]
 berlet=[]
+idopontok=[]
+csoportedzo=[]
