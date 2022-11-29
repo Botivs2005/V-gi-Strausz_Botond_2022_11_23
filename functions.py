@@ -43,21 +43,21 @@ def tulajdonsagok():
 
 
 
-def fajlBeolvasas():
-    file=open('idopontok.csv','r',encoding='utf-8')
-    file.readline() 
-    for egysor in file: 
-        darabolt=egysor.strip().split(';')
-        idopontok.append(darabolt[0])
-        csoportedzo.append((darabolt[1]))
-    file.close()
-
 def idopontokkiir():
-     with open('idopontok.csv','r') as csv_file:
+    with open('idopontok.csv','r') as csv_file:
         csv_reader=csv.reader(csv_file)
 
         for line in csv_reader:
             print(line[0])
+    melyikedzes(input('Melyik edzésre szeretne menni: '))
+
+
+def melyikedzes(line,csv_file):
+    for line in csv_file:
+        if melyikedzes==line:
+            print('Sikeres felvétel jó edzést')
+        else:
+            print('Sajnos nincs ilyen időpont')
 
 
 
@@ -66,10 +66,6 @@ def idopontokkiir():
 
 
 
-
-
-def leggyakoribbedzok():
-    pass
 
 
 
@@ -107,5 +103,7 @@ def menu1(choice):
             pass
         elif choice=='4':
             idopontokkiir()
+            melyikedzes()
+            input()
 
 
