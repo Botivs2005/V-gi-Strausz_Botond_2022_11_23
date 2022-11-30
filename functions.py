@@ -24,12 +24,13 @@ def berlethozzaadas():
     nev=input('Adja meg a nevét: ')
     fajta=input('Válasszon egy bérletet(Bronz,Silver,Gold): ')
     edzo=input('Edzők: \nTóth Zalán \nTakács Dániel\nVági-Strausz Botond\nVálasszon egy edzőt:')
+    edzok.append(edzo)
     adatokmentese(nev,fajta,edzo)
     input('Sikeres felvétel.Tovább..')
 
 def adatokmentese(nev,fajta,edzo):
-    file=open(filename, 'a', encoding='utf-8')
-    file.write(f'\n{nev};{fajta};{edzo}')
+    file=open('berletek.csv', 'a', encoding='utf-8')
+    file.write(f'{nev};{fajta};{edzo}\n')
     file.close
 
 
@@ -44,13 +45,7 @@ def tulajdonsagok():
 
 
 
-def idopontokkiir():
-    with open('idopontok.csv','r') as csv_file:
-        csv_reader=csv.reader(csv_file)
 
-        for line in csv_reader:
-            print(line[0])
-    melyikedzes=(input('Melyik edzésre szeretne menni: '))
 
 
 def melyikedzes(line,csv_file):
@@ -72,12 +67,27 @@ def fajlBeolvasas():
 
 def Kiir():
     system('cls')
-    print('------VERSENYZŐK-------\n')
+    print('------IDŐPONTOK-------\n')
     for ido in idopontok:
         print(f'\t{ido}')
-    input()
+    
 
+def vaneedzes(ido):
+    system('cls')
+    while ido in idopontok:
+        if ido==idopontok:
+            print('Jó edzést')
+        else:
+            print('Sajns nincs ilyen időpont')
 
+def search():
+    ido=(input('Adjon meg egy időpontot: '))
+    if ido in idopontok:
+        system('cls')
+        print('Jó edzést')
+    else:
+        system('cls')
+        print('Sajnos nincs ilyen időpont')
 
 
 
@@ -108,11 +118,57 @@ def menu1(choice):
         elif choice=='2':
             menu2('')
         elif choice=='3':
-            pass
+            fajlBeolvasas2()
+            system('cls')
+            print('------Leggyakoribb-------\n')
+            kialeggyakoribb()
         elif choice=='4':
             system('cls')
             fajlBeolvasas()
             Kiir()
+            search()
             input()
 
 
+def kialeggyakoribb():
+    TZ = 0    
+    TD = 0
+    VSB = 0
+    options=['Tóth Zalán', 'Takács Dániel', 'Vági-Strausz Botond']
+    for i in range(len(edzok)):
+        if edzok[i] == options[0]:
+            TZ += 1
+        elif edzok[i] == options[1]:
+            TD += 1
+        elif edzok[i] == options[2]:
+            VSB +=1 
+        else:
+            continue
+        
+    if TZ > TD:
+        print(f'{options[0]} a leggyakoribb személyi edző')
+    elif TZ > VSB:
+        print(f'{options[0]} a leggyakoribb személyi edző')
+    elif TD > TZ:
+        print(f'{options[1]} a leggyakoribb személyi edző')
+    elif TD > VSB:
+        print(f'{options[1]} a leggyakoribb személyi edző')
+    elif TZ < VSB:
+        print(f'{options[2]} a leggyakoribb személyi edző')
+    elif TD < VSB:
+        print(f'{options[2]} a leggyakoribb személyi edző')
+    else:
+        print('buggos a script')
+    
+    input('')
+
+        
+
+
+def fajlBeolvasas2():
+    file=open('berletek.csv','r',encoding='utf-8')
+    file.readline() 
+    for egysor in file:
+        darabolt=egysor.strip().split(';') 
+        edzok.append((darabolt[2]))
+    file.close()
