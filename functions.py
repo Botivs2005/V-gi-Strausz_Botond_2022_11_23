@@ -2,6 +2,7 @@ from os import system
 from data import *
 import csv
 filename='berletek.csv'
+filename='idopontok.csv'
 
 
 
@@ -49,7 +50,7 @@ def idopontokkiir():
 
         for line in csv_reader:
             print(line[0])
-    melyikedzes(input('Melyik edzésre szeretne menni: '))
+    melyikedzes=(input('Melyik edzésre szeretne menni: '))
 
 
 def melyikedzes(line,csv_file):
@@ -60,14 +61,21 @@ def melyikedzes(line,csv_file):
             print('Sajnos nincs ilyen időpont')
 
 
+def fajlBeolvasas():
+    file=open('idopontok.csv','r',encoding='utf-8')
+    file.readline() 
+    for egysor in file:
+        darabolt=egysor.strip().split(',') 
+        idopontok.append(darabolt[0])
+        csoportedzo.append((darabolt[1]))
+    file.close()
 
-
-
-
-
-
-
-
+def Kiir():
+    system('cls')
+    print('------VERSENYZŐK-------\n')
+    for ido in idopontok:
+        print(f'\t{ido}')
+    input()
 
 
 
@@ -102,8 +110,9 @@ def menu1(choice):
         elif choice=='3':
             pass
         elif choice=='4':
-            idopontokkiir()
-            melyikedzes()
+            system('cls')
+            fajlBeolvasas()
+            Kiir()
             input()
 
 
