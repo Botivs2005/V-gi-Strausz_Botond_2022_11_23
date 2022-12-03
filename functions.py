@@ -1,6 +1,7 @@
 from os import system  
 from data import *
 import csv
+import sys
 filename='berletek.csv'
 filename='idopontok.csv'
 
@@ -13,7 +14,7 @@ def menu():
     print('0-Kilépés')
     print('1-Bérlet választás')
     print('2-Bérlet tulajdonságok')
-    print('3-Személyi edzés')
+    print('3-Legkedveltebb edző')
     print('4-Csoportos edzés')
     return input('Kérem válasszon: ')
 
@@ -24,9 +25,27 @@ def berlethozzaadas():
     nev=input('Adja meg a nevét: ')
     fajta=input('Válasszon egy bérletet(Bronz,Silver,Gold): ')
     edzo=input('Edzők: \nTóth Zalán \nTakács Dániel\nVági-Strausz Botond\nVálasszon egy edzőt:')
+    azeedzo(edzo)
     edzok.append(edzo)
     adatokmentese(nev,fajta,edzo)
     input('Sikeres felvétel.Tovább..')
+
+
+def azeedzo(edzo):
+    options2=['Tóth Zalán', 'Takács Dániel', 'Vági-Strausz Botond']
+    if edzo == options2[0]:
+            pass
+    elif edzo== options2[1]:
+            pass
+    elif edzo == options2[2]:
+           pass
+    else:
+        sys.exit()
+
+
+
+
+
 
 def adatokmentese(nev,fajta,edzo):
     file=open('berletek.csv', 'a', encoding='utf-8')
@@ -44,16 +63,6 @@ def tulajdonsagok():
     return input ('Kérem válasszon: ')
 
 
-
-
-
-
-def melyikedzes(line,csv_file):
-    for line in csv_file:
-        if melyikedzes==line:
-            print('Sikeres felvétel jó edzést')
-        else:
-            print('Sajnos nincs ilyen időpont')
 
 
 def fajlBeolvasas():
