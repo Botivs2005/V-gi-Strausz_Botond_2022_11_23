@@ -24,23 +24,25 @@ def berlethozzaadas():
     print('-------Új tag-------')
     nev=input('Adja meg a nevét: ')
     fajta=input('Válasszon egy bérletet(Bronz,Silver,Gold): ')
-    edzo=input('Edzők: \nTóth Zalán \nTakács Dániel\nVági-Strausz Botond\nVálasszon egy edzőt:')
-    azeedzo(edzo)
+    edzo=''
+    while (edzo!='Tóth Zalán' and edzo!='Takács Dániel' and edzo!='Vági-Strausz Botond'):
+        edzo=input('Edzők: \nTóth Zalán \nTakács Dániel\nVági-Strausz Botond\nVálasszon egy edzőt:')
+        system('cls')
     edzok.append(edzo)
     adatokmentese(nev,fajta,edzo)
     input('Sikeres felvétel.Tovább..')
 
 
-def azeedzo(edzo):
-    options2=['Tóth Zalán', 'Takács Dániel', 'Vági-Strausz Botond']
-    if edzo == options2[0]:
-            pass
-    elif edzo== options2[1]:
-            pass
-    elif edzo == options2[2]:
-           pass
-    else:
-        sys.exit()
+# def azeedzo(edzo):
+#     options2=['Tóth Zalán', 'Takács Dániel', 'Vági-Strausz Botond']
+#     if edzo == options2[0]:
+#             pass
+#     elif edzo== options2[1]:
+#             pass
+#     elif edzo == options2[2]:
+#            pass
+#     else:
+#         berlethozzaadas()
 
 
 
